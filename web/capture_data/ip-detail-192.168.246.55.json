@@ -1,0 +1,14 @@
+{
+  "ip": "192.168.246.55",
+  "stats": {
+    "up": 345678901,
+    "down": 910758989
+  },
+  "packets": [
+    { "captured_at": "2026-06-10 14:47:15", "src_ip": "192.168.246.55", "dst_ip": "223.111.108.88", "dst_port": 443, "app_protocol": "HTTPS", "packet_size": 2345 },
+    { "captured_at": "2026-06-10 14:47:10", "src_ip": "192.168.246.55", "dst_ip": "117.162.49.51", "dst_port": 443, "app_protocol": "HTTPS", "packet_size": 1567 },
+    { "captured_at": "2026-06-10 14:47:05", "src_ip": "192.168.246.55", "dst_ip": "4.207.247.139", "dst_port": 443, "app_protocol": "HTTPS", "packet_size": 3456 },
+    { "captured_at": "2026-06-10 14:47:00", "src_ip": "192.168.246.55", "dst_ip": "120.199.71.84", "dst_port": 443, "app_protocol": "HTTPS", "packet_size": 892 },
+    { "captured_at": "2026-06-10 14:46:55", "src_ip": "192.168.246.55", "dst_ip": "183.201.115.212", "dst_port": 443, "app_protocol": "HTTPS", "packet_size": 2100 }
+  ]
+}

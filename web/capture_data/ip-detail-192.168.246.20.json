@@ -1,0 +1,19 @@
+{
+  "ip": "192.168.246.20",
+  "stats": {
+    "up": 856432109,
+    "down": 2000858936
+  },
+  "packets": [
+    { "captured_at": "2026-06-10 14:48:30", "src_ip": "192.168.246.20", "dst_ip": "150.171.73.16", "dst_port": 443, "app_protocol": "HTTPS", "packet_size": 1456 },
+    { "captured_at": "2026-06-10 14:48:28", "src_ip": "192.168.246.20", "dst_ip": "120.203.228.106", "dst_port": 443, "app_protocol": "HTTPS", "packet_size": 2890 },
+    { "captured_at": "2026-06-10 14:48:25", "src_ip": "192.168.246.20", "dst_ip": "112.53.55.225", "dst_port": 8080, "app_protocol": "HTTP", "packet_size": 5120 },
+    { "captured_at": "2026-06-10 14:48:22", "src_ip": "192.168.246.20", "dst_ip": "150.171.73.16", "dst_port": 443, "app_protocol": "HTTPS", "packet_size": 3412 },
+    { "captured_at": "2026-06-10 14:48:18", "src_ip": "192.168.246.20", "dst_ip": "202.89.233.101", "dst_port": 443, "app_protocol": "HTTPS", "packet_size": 1256 },
+    { "captured_at": "2026-06-10 14:48:15", "src_ip": "192.168.246.20", "dst_ip": "59.83.207.254", "dst_port": 80, "app_protocol": "HTTP", "packet_size": 856 },
+    { "captured_at": "2026-06-10 14:48:12", "src_ip": "192.168.246.20", "dst_ip": "40.104.115.178", "dst_port": 443, "app_protocol": "HTTPS", "packet_size": 2345 },
+    { "captured_at": "2026-06-10 14:48:08", "src_ip": "192.168.246.20", "dst_ip": "117.163.60.130", "dst_port": 443, "app_protocol": "HTTPS", "packet_size": 4096 },
+    { "captured_at": "2026-06-10 14:48:04", "src_ip": "192.168.246.20", "dst_ip": "112.53.42.245", "dst_port": 8864, "app_protocol": "HTTPS", "packet_size": 1890 },
+    { "captured_at": "2026-06-10 14:48:01", "src_ip": "192.168.246.20", "dst_ip": "39.135.144.77", "dst_port": 443, "app_protocol": "HTTPS", "packet_size": 2678 }
+  ]
+}

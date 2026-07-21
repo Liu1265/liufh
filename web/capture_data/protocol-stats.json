@@ -1,0 +1,11 @@
+[
+  { "app_protocol": "HTTPS", "count": 18234, "total_size": 3857291045 },
+  { "app_protocol": "HTTP", "count": 856, "total_size": 125890432 },
+  { "app_protocol": "DNS", "count": 1521, "total_size": 2345678 },
+  { "app_protocol": "TCP", "count": 845, "total_size": 98453210 },
+  { "app_protocol": "UDP", "count": 623, "total_size": 45678901 },
+  { "app_protocol": "ICMP", "count": 478, "total_size": 567890 },
+  { "app_protocol": "SSH", "count": 0, "total_size": 0 },
+  { "app_protocol": "DHCP", "count": 12, "total_size": 45678 },
+  { "app_protocol": "FTP", "count": 0, "total_size": 0 }
+]

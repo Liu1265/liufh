@@ -1,0 +1,15 @@
+{
+  "today_total": 4507896543,
+  "active_devices": 2,
+  "current_connections": 69,
+  "alert_count": 3,
+  "hourlyThroughput": [
+    { "hour": "08:00", "down": 120.5, "up": 45.2 },
+    { "hour": "09:00", "down": 210.3, "up": 78.6 },
+    { "hour": "10:00", "down": 185.7, "up": 92.1 },
+    { "hour": "11:00", "down": 156.2, "up": 65.4 },
+    { "hour": "12:00", "down": 198.4, "up": 88.9 },
+    { "hour": "13:00", "down": 230.1, "up": 102.3 },
+    { "hour": "14:00", "down": 310.8, "up": 145.7 }
+  ]
+}
