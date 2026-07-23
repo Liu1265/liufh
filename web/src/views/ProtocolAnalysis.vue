@@ -43,11 +43,13 @@
 import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue';
 import * as echarts from 'echarts';
 import { getProtocolStats, getIpPorts } from '../api';
+import socket from '../socket';
 
 const pieChart=ref(null), transChart=ref(null), portChart=ref(null);
 let pInst=null, tInst=null, portInst=null;
 const tableData=ref([]);
 const ipPortData = ref([]);
+const transData = ref({ tcp: 0, udp: 0 });  // 真实传输层统计数据
 const info=[
   { protocol:'HTTPS', port:'443', desc:'安全超文本传输协议，加密网页浏览', layer:'应用层' },
   { protocol:'HTTP', port:'80', desc:'超文本传输协议，明文网页浏览', layer:'应用层' },
@@ -116,7 +118,10 @@ onMounted(() => {
       tooltip: { trigger:'item', formatter:'{b}: {c} ({d}%)' },
       series:[{
         type:'pie', radius:['40%','65%'], center:['50%','50%'], roseType:'radius',
-        data:[{ value:70, name:'TCP' },{ value:25, name:'UDP' },{ value:5, name:'ICMP' }],
+        data:[
+          { value: transData.value.tcp || 0, name:'TCP' },
+          { value: transData.value.udp || 0, name:'UDP' },
+        ],
         avoidLabelOverlap: false,
         label: { show:true, position:'outside', formatter:'{b}\n{d}%', fontSize:12, alignTo:'edge', edgeDistance:8 },
         labelLine: { show:true, length:30, length2:25 },
@@ -143,7 +148,35 @@ onMounted(() => {
   });
   refresh();
   timer = setInterval(refresh, 30000);
+
+  // 接收真实传输层协议统计（TCP/UDP），替换原硬编码数据
+  socket.on('transStats', (stats) => {
+    transData.value = stats;
+    if (tInst) {
+      tInst.setOption({
+        series: [{
+          data: [
+            { value: stats.tcp || 0, name: 'TCP' },
+            { value: stats.udp || 0, name: 'UDP' },
+          ],
+        }],
+      });
+    }
+  });
+
+  // 接收真实应用层协议统计，实时更新饼图
+  socket.on('protoStats', (stats) => {
+    const data = Object.entries(stats)
+      .map(([name, value]) => ({ name, value }))
+      .sort((a, b) => b.value - a.value);
+    if (pInst) pInst.setOption({ series: [{ data }] });
+  });
 });
-onUnmounted(() => { pInst?.dispose(); tInst?.dispose(); portInst?.dispose(); clearInterval(timer); });
+onUnmounted(() => {
+  pInst?.dispose(); tInst?.dispose(); portInst?.dispose();
+  clearInterval(timer);
+  socket.off('transStats');
+  socket.off('protoStats');
+});
 </script>
 <style scoped>.page-title { font-size:22px; margin-bottom:20px; color:#1a1a2e; }</style>

@@ -5,3 +5,5 @@ dist/
 .env
 .env.local
 tmp/
+web/capture_data/
+server/scan_results.json
